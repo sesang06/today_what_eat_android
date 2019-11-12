@@ -7,20 +7,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:textSize="20sp"
+
+            android:gravity="center"
+            android:layout_marginTop="50dp"
             android:text="오늘 먹을 음식은"
     />
     <TextView
             android:id="@+id/text_view_pick"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
     />
     <Button
             android:id="@+id/button_pick"
             android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            android:layout_height="70dp"
+
+            android:textSize="20sp"
+
+            android:text="만 빼고 아무거나"/>
+    <TextView
+            android:layout_width="match_parent"
             android:layout_height="50dp"
 
-            android:text="나올때까지 답정너 클"/>
-
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="원하는 메뉴 나올때까지 계속 클릭할 거 다 알아.."
+    />
 
 </LinearLayout>

@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
-
+    <com.google.android.material.card.MaterialCardView
+            app:strokeWidth = "1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mtrl_card_spacing"
+            android:layout_marginTop="@dimen/mtrl_card_spacing"
+            android:layout_marginRight="@dimen/mtrl_card_spacing"
+            app:cardBackgroundColor="@color/colorPrimary"
+            >
     <TextView
             android:id="@+id/text_view_title"
 
             android:layout_width="match_parent"
             android:layout_height="50dp"
 
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
     />
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

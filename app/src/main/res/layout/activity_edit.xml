@@ -4,22 +4,44 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <TextView
+            android:layout_weight="0"
             android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:textSize="20sp"
+            android:gravity="center"
 
-        android:text="주변 음식점들을 모두 입력, 쉼표로 구분"
+            android:text="주변 음식점들을 모두 입력, 쉼표로 구분"
     />
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+          >
+    <com.google.android.material.textfield.TextInputEditText
+
             android:id="@+id/edit_text_restaurant"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
 
     />
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
+
+            android:layout_weight="0"
             android:id="@+id/button_restaurant"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:gravity="center"
 
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:text="저장"/>
 
 
