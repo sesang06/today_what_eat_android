@@ -1,9 +1,12 @@
 package com.sesang06.todaywhateat
 
 import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +16,7 @@ import com.sesang06.todaywhateat.viewmodel.ListViewModelFactory
 import androidx.lifecycle.ViewModelProviders
 import com.sesang06.todaywhateat.adapter.RestaurantAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
+import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 class ListFragment : Fragment() {
@@ -59,6 +63,25 @@ class ListFragment : Fragment() {
                     }
                 }
         )
+
+        disposeables.add(
+            viewModel.showEmptyView
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe { isEmpty ->
+                    view.empty_view.visibility =
+                        when(isEmpty) {
+                            true -> VISIBLE
+                            false -> GONE
+                        }
+                }
+        )
+
+        view.edit_button.setOnClickListener {
+            val intent = Intent(this.context, EditActivity::class.java)
+            this.startActivity(intent)
+        }
+
+
 
         viewModel.load()
         return view
